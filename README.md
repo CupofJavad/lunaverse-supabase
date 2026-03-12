@@ -56,8 +56,12 @@ The **Supabase MCP** server is available in Cursor (Settings → Tools & MCP). U
 
 | Doc | Purpose |
 |-----|---------|
+| [docs/NEXT_STEPS.md](docs/NEXT_STEPS.md) | **Detailed next steps** — verify CI, local setup, hosting, Lab auth, schema/RLS, backends, DNS, optional MCP and branch protection. |
+| [docs/COMPLETION_REPORT.md](docs/COMPLETION_REPORT.md) | What was done in-repo and what you still need to do (Dashboard, Vercel/Netlify, DNS). |
+| [docs/BRANCH_PROTECTION.md](docs/BRANCH_PROTECTION.md) | How to require the deploy status check on `main`. |
 | [docs/MIGRATION_FROM_ORIGINAL.md](docs/MIGRATION_FROM_ORIGINAL.md) | What was migrated from Server_Management_Lunaverse and how it maps to Supabase. |
 | [docs/SUPABASE_SETUP_AND_GITHUB.md](docs/SUPABASE_SETUP_AND_GITHUB.md) | Step-by-step Supabase + GitHub setup and branch/deploy. |
+| [docs/GITHUB_ACTIONS_FREE_DEPLOY.md](docs/GITHUB_ACTIONS_FREE_DEPLOY.md) | Free deploy via GitHub Actions (secrets, troubleshooting). |
 | [docs/PITFALLS_AND_TIPS.md](docs/PITFALLS_AND_TIPS.md) | Common pitfalls and tips (migrations, RLS, secrets). |
 | [docs/GITHUB_REPO_SYNC_ONLY_THIS_DIR.md](docs/GITHUB_REPO_SYNC_ONLY_THIS_DIR.md) | How to create a GitHub repo that contains only this directory (no parent secrets). |
 

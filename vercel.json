@@ -1,0 +1,10 @@
+{
+  "buildCommand": "",
+  "outputDirectory": "web",
+  "rewrites": [
+    { "source": "/", "destination": "/hub/index.html" },
+    { "source": "/lab", "destination": "/hub/lab.html" },
+    { "source": "/portfolio", "destination": "/portfolio/index.html" },
+    { "source": "/portfolio/", "destination": "/portfolio/index.html" }
+  ]
+}

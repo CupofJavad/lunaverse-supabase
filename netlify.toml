@@ -1,0 +1,31 @@
+# Lunaverse Supabase — static hub + portfolio
+# Connect this repo; Netlify will use web/ as publish directory.
+
+[build]
+  publish = "web"
+  command = ""
+
+# So / and /lab and /portfolio work as expected
+[[redirects]]
+  from = "/"
+  to = "/hub/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/lab"
+  to = "/hub/lab.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/portfolio/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/portfolio/"
+  to = "/portfolio/index.html"
+  status = 200
+  force = true
