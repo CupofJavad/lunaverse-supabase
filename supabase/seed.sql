@@ -1,5 +1,6 @@
 -- Seed data for local/preview branches only. Not applied to production by default.
 -- Ref: https://supabase.com/docs/guides/local-development/seeding-your-database
+-- (Trigger: verify GitHub Actions deploy workflow.)
 
 -- Example: insert test data for development
 -- INSERT INTO public.profiles (id, display_name) VALUES
