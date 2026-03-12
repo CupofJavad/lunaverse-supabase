@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Modeling Equations — Transformer-based prediction | Javad Khoshnevisan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --dark-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f23; color: #e4e4e7; }
+        .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .project-card { background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border: 1px solid rgba(102, 126, 234, 0.2); border-radius: 20px; }
+        .btn-primary { background: var(--primary-gradient); border: none; border-radius: 10px; padding: 12px 30px; color: white; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-6 py-12 max-w-4xl">
+        <a href="index.html#projects" class="inline-flex items-center gap-2 text-gray-400 hover:text-purple-400 transition mb-8">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <header class="mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <i class="fas fa-chart-line text-4xl text-purple-500"></i>
+                <h1 class="text-4xl md:text-5xl font-bold gradient-text">Predictive Modeling Equations</h1>
+            </div>
+            <p class="text-xl text-gray-300">Transformer-based multi-modal prediction for financial, behavioral, and time-series data. BTC price predictor with CLI and web UI; runs locally or on server.</p>
+        </header>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 gradient-text">About the project</h2>
+            <p class="text-gray-300 mb-4">
+                A Python implementation of core transformer/attention equations adapted for multi-modal predictive modeling. The app predicts Bitcoin (or similar datasets) using driver equations, volatility regime detection, event impacts, and uncertainty quantification. It includes a lightweight CLI menu and a web UI.
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 mb-6">
+                <li><strong class="text-white">Core math:</strong> Scaled dot-product attention, multi-head attention, positional encoding, feed-forward layers</li>
+                <li><strong class="text-white">Multi-modal inputs:</strong> Numerical, temporal, behavioral; regression and classification</li>
+                <li>BTC price driver equation (reverse-engineered from historical drivers)</li>
+                <li>Volatility regime detection and uncertainty intervals (90%, 95%)</li>
+                <li>Local CLI admin menu and FastAPI web UI</li>
+                <li>Deployable on Lunaverse with app on external drive (Lacie) to save server disk</li>
+            </ul>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 gradient-text">Tech stack</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Python</span>
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">PyTorch</span>
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">FastAPI</span>
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">NumPy</span>
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">pandas</span>
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">scikit-learn</span>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 gradient-text">Try the app</h2>
+            <p class="text-gray-300 mb-4">
+                When deployed on the server, the BTC Price Predictor is available at the URLs below. You can also run it locally (see GitHub README).
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://predictive.thegeeksnextdoor.com" target="_blank" rel="noopener" class="btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Open app (predictive.thegeeksnextdoor.com)
+                </a>
+                <a href="http://thegeeksnextdoor.com/predictive/" target="_blank" rel="noopener" class="border border-purple-500 text-white px-6 py-3 rounded-lg hover:bg-purple-500 transition inline-flex items-center gap-2">
+                    <i class="fas fa-link"></i> thegeeksnextdoor.com/predictive/
+                </a>
+                <a href="https://github.com/CupofJavad/Predictive_Modeling_Equations" target="_blank" rel="noopener" class="border border-purple-500 text-white px-6 py-3 rounded-lg hover:bg-purple-500 transition inline-flex items-center gap-2">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </section>
+
+        <footer class="pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+            <a href="index.html" class="text-purple-400 hover:underline">Portfolio</a> · <a href="/" class="text-purple-400 hover:underline">The Geeks Next Door</a>
+        </footer>
+    </div>
+</body>
+</html>

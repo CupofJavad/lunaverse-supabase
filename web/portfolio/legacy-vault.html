@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy Vault — Multi-Chain Estate Planning | Javad Khoshnevisan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --dark-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f23; color: #e4e4e7; }
+        .gradient-text { background: var(--primary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .project-card { background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border: 1px solid rgba(102, 126, 234, 0.2); border-radius: 20px; }
+        .btn-primary { background: var(--primary-gradient); border: none; border-radius: 10px; padding: 12px 30px; color: white; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto px-6 py-12 max-w-4xl">
+        <a href="index.html#projects" class="inline-flex items-center gap-2 text-gray-400 hover:text-purple-400 transition mb-8">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <header class="mb-12">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-4xl" aria-hidden="true">₿</span>
+                <h1 class="text-4xl md:text-5xl font-bold gradient-text">Legacy Vault</h1>
+            </div>
+            <p class="text-xl text-gray-300">Multi-chain estate planning for Bitcoin (BTC), Monero (XMR), and Stacks (STX). Secure your crypto for those who come next.</p>
+        </header>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 gradient-text">About the project</h2>
+            <p class="text-gray-300 mb-4">
+                Legacy Vault is a full-stack web app for creating and managing estate plans: beneficiaries, allocation percentages, timelock policies, and optional wallet addresses. Built to be self-hosted and privacy-focused.
+            </p>
+            <ul class="list-disc list-inside text-gray-300 space-y-2 mb-6">
+                <li><strong class="text-white">Rust API</strong> — Axum, SQLx, PostgreSQL, Argon2 auth, session cookies, rate limiting</li>
+                <li><strong class="text-white">Next.js frontend</strong> — React, TypeScript, Tailwind; responsive and accessible</li>
+                <li>Estate plans with optional BTC/XMR/STX addresses</li>
+                <li>Beneficiaries with allocation validation (sum ≤ 100%)</li>
+                <li>Timelock policies per plan</li>
+                <li>Admin: user list, audit log, role management</li>
+            </ul>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 gradient-text">Tech stack</h2>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Rust</span>
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Axum</span>
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Next.js</span>
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">TypeScript</span>
+                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Tailwind CSS</span>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 gradient-text">Try the app</h2>
+            <p class="text-gray-300 mb-4">
+                The app is available at estate.thegeeksnextdoor.com. Lab access (password-protected) also lists it. You can run it locally via the project repo.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://estate.thegeeksnextdoor.com" target="_blank" rel="noopener" class="btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Open app (estate.thegeeksnextdoor.com)
+                </a>
+                <a href="/lab" class="border border-purple-500 text-white px-6 py-3 rounded-lg hover:bg-purple-500 transition inline-flex items-center gap-2">
+                    <i class="fas fa-flask"></i> Lab (all apps)
+                </a>
+                <a href="https://github.com/CupofJavad/Bitcoin_Estate_Planning_Tool_Rust" target="_blank" rel="noopener" class="border border-purple-500 text-white px-6 py-3 rounded-lg hover:bg-purple-500 transition inline-flex items-center gap-2">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </section>
+
+        <footer class="pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+            <a href="index.html" class="text-purple-400 hover:underline">Portfolio</a> · <a href="/" class="text-purple-400 hover:underline">The Geeks Next Door</a>
+        </footer>
+    </div>
+</body>
+</html>

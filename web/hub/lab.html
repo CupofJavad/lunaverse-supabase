@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab — The Geeks Next Door</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0c;
+      --bg-elevated: #12121a;
+      --border: rgba(255,255,255,0.06);
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --accent: #f59e0b;
+      --accent-dim: rgba(245, 158, 11, 0.15);
+      --radius: 10px;
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; padding: 2rem 1rem; -webkit-font-smoothing: antialiased; }
+    .wrap { max-width: 640px; margin: 0 auto; }
+    h1 { font-family: var(--font-head); font-weight: 700; font-size: 1.5rem; margin-bottom: 0.5rem; }
+    p.sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .section-label { font-family: var(--font-head); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 0.5rem; }
+    a.back { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 2rem; }
+    a.back:hover { color: var(--accent); }
+    ul { list-style: none; }
+    li { margin-bottom: 0.75rem; }
+    li a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    li a:hover { border-color: var(--accent-dim); background: rgba(255,255,255,0.02); }
+    li a span.name { color: var(--text); }
+    li a span.url { font-size: 0.8rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a href="https://thegeeksnextdoor.com/" class="back">← Home</a>
+    <h1>Lab</h1>
+    <p class="sub">Public links use the domain. Lab-only tools use the server IP — on your network only. Keep this page private.</p>
+
+    <p class="section-label" style="margin-top: 1.5rem;">Public (thegeeksnextdoor.com)</p>
+    <ul>
+      <li><a href="https://thegeeksnextdoor.com/"><span class="name">Home</span><span class="url">thegeeksnextdoor.com</span></a></li>
+      <li><a href="https://thegeeksnextdoor.com/portfolio"><span class="name">Portfolio</span><span class="url">/portfolio</span></a></li>
+      <li><a href="https://app.thegeeksnextdoor.com/"><span class="name">Lipsum Lap</span><span class="url">app.thegeeksnextdoor.com</span></a></li>
+      <li><a href="https://portfolio.thegeeksnextdoor.com" target="_blank" rel="noopener"><span class="name">Portfolio (subdomain)</span><span class="url">portfolio.thegeeksnextdoor.com</span></a></li>
+      <li><a href="https://estate.thegeeksnextdoor.com" target="_blank" rel="noopener"><span class="name">Legacy Vault</span><span class="url">estate.thegeeksnextdoor.com</span></a></li>
+      <li><a href="http://chat.thegeeksnextdoor.com" target="_blank" rel="noopener"><span class="name">Luna Chat</span><span class="url">chat.thegeeksnextdoor.com</span></a></li>
+    </ul>
+
+    <p class="section-label" style="margin-top: 2rem;">Lab only (on your network — no public URL)</p>
+    <p class="sub" style="margin-top: 0;">These are not on the public domain. Use when on the same LAN or VPN. Replace 192.168.8.2 with your server IP if different.</p>
+    <ul>
+      <li><a href="http://192.168.8.2:8080" target="_blank" rel="noopener"><span class="name">Filebrowser</span><span class="url">:8080</span></a></li>
+      <li><a href="https://192.168.8.2:9090" target="_blank" rel="noopener"><span class="name">Cockpit</span><span class="url">:9090</span></a></li>
+      <li><a href="http://192.168.8.2:5050" target="_blank" rel="noopener"><span class="name">pgAdmin</span><span class="url">:5050</span></a></li>
+      <li><a href="http://192.168.8.2:9000" target="_blank" rel="noopener"><span class="name">Portainer</span><span class="url">:9000</span></a></li>
+      <li><a href="http://192.168.8.2:8050" target="_blank" rel="noopener"><span class="name">Monero Node &amp; Miner</span><span class="url">:8050</span></a></li>
+    </ul>
+  </div>
+</body>
+</html>

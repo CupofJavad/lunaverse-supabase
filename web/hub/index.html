@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Geeks Next Door — Projects & Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0c;
+      --bg-elevated: #12121a;
+      --border: rgba(255,255,255,0.06);
+      --text: #e4e4e7;
+      --text-muted: #71717a;
+      --accent: #f59e0b;
+      --accent-dim: rgba(245, 158, 11, 0.15);
+      --success: #22c55e;
+      --radius: 12px;
+      --font-head: 'Syne', sans-serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    /* Hero */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 70%;
+      height: 140%;
+      background: radial-gradient(ellipse, var(--accent-dim) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero h1 {
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+    .hero h1 .accent { color: var(--accent); }
+    .hero .tagline {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 32ch;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .hero .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.6rem;
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .hero .cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(245,158,11,0.25); }
+    .hero .cta.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      margin-left: 0.75rem;
+    }
+    .hero .cta.secondary:hover { border-color: var(--accent); color: var(--accent); }
+    /* Section */
+    section { padding: 4rem 0; }
+    .section-label {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .card:hover { border-color: rgba(255,255,255,0.12); transform: translateY(-2px); }
+    .card.highlight { border-color: var(--accent-dim); }
+    .card .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--accent-dim);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      font-family: var(--font-head);
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .card .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: 6px;
+      color: var(--text-muted);
+      margin-right: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .card a.link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .card a.link:hover { text-decoration: underline; }
+    .card a.link.restricted { color: var(--text-muted); cursor: default; }
+    .card a.link.restricted:hover { text-decoration: none; }
+    /* Lab CTA */
+    .lab-cta {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .lab-cta p { color: var(--text-muted); margin-bottom: 1rem; }
+    .lab-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.4rem;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: background 0.2s, color 0.2s;
+    }
+    .lab-cta a:hover { background: var(--accent-dim); color: var(--accent); }
+    /* Footer */
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <h1>The Geeks <span class="accent">Next Door</span></h1>
+      <p class="tagline">Projects and experiments hosted from our home lab. Everything under one roof at thegeeksnextdoor.com.</p>
+      <div>
+        <a href="https://thegeeksnextdoor.com/portfolio" class="cta">View portfolio</a>
+        <a href="https://thegeeksnextdoor.com/lab" class="cta secondary">Lab access</a>
+      </div>
+      <p class="section-label" style="margin-top: 2rem; margin-bottom: 0;">Quick links</p>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        <a href="https://thegeeksnextdoor.com/portfolio" class="link">Portfolio</a> ·
+        <a href="https://thegeeksnextdoor.com/lab" class="link">Lab</a> ·
+        <a href="https://app.thegeeksnextdoor.com/" class="link">Lipsum Lap</a> ·
+        <a href="https://thegeeksnextdoor.com/portfolio/legacy-vault.html" class="link">Legacy Vault</a>
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap">
+      <p class="section-label">Public</p>
+      <h2>Sites &amp; apps (no login)</h2>
+      <div class="card-grid">
+        <article class="card">
+          <div class="icon" aria-hidden="true">▣</div>
+          <h3>Portfolio</h3>
+          <p>Professional portfolio and project highlights. Public and always on.</p>
+          <span class="tag">Static</span>
+          <a href="https://thegeeksnextdoor.com/portfolio" class="link">View portfolio →</a>
+        </article>
+        <article class="card highlight">
+          <div class="icon" aria-hidden="true">◇</div>
+          <h3>Lipsum Lap</h3>
+          <p>Lorem ipsum generator and text tools. Handy for design mockups and placeholders.</p>
+          <span class="tag">Web app</span>
+          <a href="https://app.thegeeksnextdoor.com/" class="link">Open app →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">₿</div>
+          <h3>Legacy Vault</h3>
+          <p>Multi-chain estate planning for BTC, XMR, and STX. Rust API, Next.js frontend, beneficiaries, timelock policies.</p>
+          <span class="tag">Rust</span><span class="tag">Next.js</span>
+          <a href="https://thegeeksnextdoor.com/portfolio/legacy-vault.html" class="link">View project →</a>
+          <a href="https://estate.thegeeksnextdoor.com" target="_blank" rel="noopener" class="link" style="margin-left: 0.5rem;">Open app →</a>
+        </article>
+      </div>
+    </section>
+    <section class="wrap">
+      <p class="section-label">Lab</p>
+      <h2>Password-protected apps</h2>
+      <p class="section-label" style="text-transform: none; font-size: 0.85rem; letter-spacing: 0;">Luna Chat, Filebrowser, and direct links to all services. One login for the Lab.</p>
+      <div class="card-grid">
+        <article class="card">
+          <div class="icon" aria-hidden="true">💬</div>
+          <h3>Luna Chat</h3>
+          <p>Chat UI wired to local LLMs. Experiment with models running on our server.</p>
+          <span class="tag">AI</span>
+          <a href="/lab" class="link">Open via Lab →</a>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">📁</div>
+          <h3>Filebrowser</h3>
+          <p>Simple file management and sharing for lab assets.</p>
+          <span class="tag">Tools</span>
+          <a href="/lab" class="link">Open via Lab →</a>
+        </article>
+      </div>
+      <div class="lab-cta">
+        <p>Lab links are not listed publicly. Use the Lab when you have access.</p>
+        <a href="/lab">Go to Lab</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><a href="https://thegeeksnextdoor.com/portfolio">Portfolio</a> · <a href="https://thegeeksnextdoor.com/lab">Lab</a> · The Geeks Next Door</p>
+    </div>
+  </footer>
+</body>
+</html>

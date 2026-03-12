@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javad Khoshnevisan - Technical Program Manager & AI Expert</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --dark-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0f0f23;
+            color: #e4e4e7;
+            overflow-x: hidden;
+        }
+
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-gradient {
+            background: var(--dark-gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(102, 126, 234, 0.5);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.5);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .skill-bar {
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 6px;
+            background: var(--primary-gradient);
+            border-radius: 10px;
+            transition: width 2s ease-in-out;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 12px;
+            width: 2px;
+            height: calc(100% + 20px);
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: scale(1.05);
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(102, 126, 234, 0.4);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .form-input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 10px;
+            padding: 12px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: rgba(102, 126, 234, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            border: none;
+            border-radius: 10px;
+            padding: 12px 30px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .stats-counter {
+            font-size: 3rem;
+            font-weight: bold;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 35, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+            
+            .nav-menu.hidden {
+                transform: translateY(-100%);
+            }
+        }
+
+        .typing-effect {
+            border-right: 3px solid rgba(102, 126, 234, 0.8);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { border-color: rgba(102, 126, 234, 0.8); }
+            51%, 100% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-menu">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text">JK</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-purple-400 transition">Home</a>
+                    <a href="#about" class="nav-link hover:text-purple-400 transition">About</a>
+                    <a href="#skills" class="nav-link hover:text-purple-400 transition">Skills</a>
+                    <a href="#experience" class="nav-link hover:text-purple-400 transition">Experience</a>
+                    <a href="#projects" class="nav-link hover:text-purple-400 transition">Projects</a>
+                    <a href="#contact" class="nav-link hover:text-purple-400 transition">Contact</a>
+                </div>
+                <button class="mobile-menu text-white">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center relative">
+        <div class="floating-particles">
+            <div class="particle" style="left: 10%; width: 6px; height: 6px; animation-delay: 0s;"></div>
+            <div class="particle" style="left: 20%; width: 8px; height: 8px; animation-delay: 2s;"></div>
+            <div class="particle" style="left: 30%; width: 4px; height: 4px; animation-delay: 4s;"></div>
+            <div class="particle" style="left: 40%; width: 10px; height: 10px; animation-delay: 6s;"></div>
+            <div class="particle" style="left: 50%; width: 6px; height: 6px; animation-delay: 8s;"></div>
+            <div class="particle" style="left: 60%; width: 8px; height: 8px; animation-delay: 10s;"></div>
+            <div class="particle" style="left: 70%; width: 4px; height: 4px; animation-delay: 12s;"></div>
+            <div class="particle" style="left: 80%; width: 6px; height: 6px; animation-delay: 14s;"></div>
+            <div class="particle" style="left: 90%; width: 8px; height: 8px; animation-delay: 16s;"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                        Hi, I'm <span class="gradient-text">Javad Khoshnevisan</span>
+                    </h1>
+                    <div class="text-2xl md:text-3xl mb-6 h-8">
+                        <span id="typed-text" class="typing-effect"></span>
+                    </div>
+                    <p class="text-xl mb-8 text-gray-300">
+                        Technical Program Manager delivering $40M+ ROI through AI/ML innovation, ERP excellence, and Fortune 500 leadership
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="btn-primary">
+                            <i class="fas fa-envelope mr-2"></i>Get In Touch
+                        </a>
+                        <a href="#projects" class="border border-purple-500 text-white px-6 py-3 rounded-lg hover:bg-purple-500 transition">
+                            <i class="fas fa-code mr-2"></i>View Projects
+                        </a>
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="relative">
+                    <div class="bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                        <div class="text-center">
+                            <div class="stats-counter mb-2" data-target="40000000">0</div>
+                            <p class="text-xl">ROI Delivered</p>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 bg-gradient-to-br from-pink-600 to-purple-600 rounded-2xl p-6 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+                        <div class="text-center">
+                            <div class="stats-counter mb-2" data-target="120">0</div>
+                            <p class="text-lg">AI Deployments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-4xl font-bold gradient-text mb-2" data-target="40000000">0</div>
+                    <p class="text-gray-300">ROI Delivered</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-4xl font-bold gradient-text mb-2" data-target="120">0</div>
+                    <p class="text-gray-300">AI Deployments</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-4xl font-bold gradient-text mb-2" data-target="12">0</div>
+                    <p class="text-gray-300">Years Experience</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="400">
+                    <div class="text-4xl font-bold gradient-text mb-2" data-target="500">0</div>
+                    <p class="text-gray-300">Fortune 500 Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                About <span class="gradient-text">Me</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6 gradient-text">Technical Program Manager & AI Expert</h3>
+                    <p class="text-lg mb-6 text-gray-300">
+                        I bridge the gap between technical execution and business strategy, delivering exceptional results for Fortune 500 clients. With 12+ years of experience, I've mastered the art of turning complex systems into reliable operations.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-robot text-purple-500 text-xl mr-4"></i>
+                            <span>AI/ML Implementation & LLM Integration</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-cogs text-purple-500 text-xl mr-4"></i>
+                            <span>ERP Implementation & Systems Integration</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-box text-purple-500 text-xl mr-4"></i>
+                            <span>BOM Management & Manufacturing Systems</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-microchip text-purple-500 text-xl mr-4"></i>
+                            <span>Hardware-Software Integration</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-chart-line text-purple-500 text-xl mr-4"></i>
+                            <span>Program Management Excellence</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="https://github.com/CupofJavad" target="_blank" class="text-2xl hover:text-purple-400 transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.thekeyholders.org" target="_blank" class="text-2xl hover:text-purple-400 transition">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/javadkhoshnevisan" target="_blank" class="text-2xl hover:text-purple-400 transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="card-hover bg-gray-800 p-6 rounded-xl">
+                            <div class="text-3xl font-bold gradient-text mb-2">98%</div>
+                            <p class="text-sm text-gray-300">User Adoption Rate</p>
+                        </div>
+                        <div class="card-hover bg-gray-800 p-6 rounded-xl">
+                            <div class="text-3xl font-bold gradient-text mb-2">25%</div>
+                            <p class="text-sm text-gray-300">Efficiency Improvement</p>
+                        </div>
+                        <div class="card-hover bg-gray-800 p-6 rounded-xl">
+                            <div class="text-3xl font-bold gradient-text mb-2">40%</div>
+                            <p class="text-sm text-gray-300">Resource Utilization</p>
+                        </div>
+                        <div class="card-hover bg-gray-800 p-6 rounded-xl">
+                            <div class="text-3xl font-bold gradient-text mb-2">30%</div>
+                            <p class="text-sm text-gray-300">Admin Overhead Reduction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                Technical <span class="gradient-text">Skills</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-bold mb-6 gradient-text">AI/ML & Automation</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Python & LLM Integration</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>LangChain & Multi-Agent Systems</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Machine Learning & RAG</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold mb-6 gradient-text">ERP & Systems</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>ServiceTitan & Epicor</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>SAP & Salesforce</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>BOM/BOP/MOM Systems</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-bold mb-6 gradient-text">Program Management</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Agile & Scrum</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Stakeholder Management</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Budget & Risk Management</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12" data-aos="fade-up">
+                <h3 class="text-xl font-bold mb-6 text-center gradient-text">Technology Stack</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fab fa-python text-3xl mb-2"></i>
+                        <p class="text-sm">Python</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-database text-3xl mb-2"></i>
+                        <p class="text-sm">SQL</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-code text-3xl mb-2"></i>
+                        <p class="text-sm">REST/GraphQL</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-robot text-3xl mb-2"></i>
+                        <p class="text-sm">LLM Integration</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-brain text-3xl mb-2"></i>
+                        <p class="text-sm">LangChain</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-cloud text-3xl mb-2"></i>
+                        <p class="text-sm">Cloud Platforms</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-git-alt text-3xl mb-2"></i>
+                        <p class="text-sm">Git/GitHub</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-chart-bar text-3xl mb-2"></i>
+                        <p class="text-sm">Data Analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                Professional <span class="gradient-text">Experience</span>
+            </h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="card-hover bg-gray-800 p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text">Founder & Principal</h3>
+                                <p class="text-purple-400">NeuralKey Labs</p>
+                            </div>
+                            <span class="text-sm text-gray-400">Dec 2020 - Present</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Founded and lead AI automation consultancy delivering enterprise-grade solutions. Deployed 120+ AI automation solutions generating $40M+ ROI.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">AI/ML</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">LLM Integration</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Python</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-hover bg-gray-800 p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text">Technical Project Manager</h3>
+                                <p class="text-purple-400">Legion Audio Visual Services</p>
+                            </div>
+                            <span class="text-sm text-gray-400">Apr 2024 - Dec 2025</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Led technical program management for Fortune 500 clients including Google, Booz Allen, TEDx. Managed budgets exceeding $250K.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Program Management</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">AI Automation</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Event Production</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-hover bg-gray-800 p-6 rounded-xl">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold gradient-text">Project Manager – ERP Implementation</h3>
+                                <p class="text-purple-400">Six S Partners Inc.</p>
+                            </div>
+                            <span class="text-sm text-gray-400">Oct 2022 - Nov 2023</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Managed end-to-end ERP implementation programs for manufacturing clients. Successfully delivered 12 ERP implementations managing $2M+ budgets.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">ERP Implementation</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">BOM Management</span>
+                            <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">System Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                Featured <span class="gradient-text">Projects</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <i class="fas fa-robot text-3xl text-purple-500"></i>
+                                <a href="https://github.com/The-Key-Holders/currentrms-google-sheets-sync" target="_blank" class="text-white hover:text-purple-400">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 gradient-text">Current RMS Google Workspace Integration</h3>
+                            <p class="text-gray-300 mb-4">
+                                Production-grade Python application syncing Current RMS API data to Google Sheets for real-time reporting and analytics.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">REST API</span>
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <i class="fas fa-brain text-3xl text-purple-500"></i>
+                                <a href="https://www.thekeyholders.org/neural-key-labs" target="_blank" class="text-white hover:text-purple-400">
+                                    <i class="fas fa-external-link-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 gradient-text">NeuralKey Labs AI Solutions</h3>
+                            <p class="text-gray-300 mb-4">
+                                AI automation consultancy delivering enterprise-grade solutions with 120+ deployments generating $40M+ ROI.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">AI/ML</span>
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">LLM Integration</span>
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">LangChain</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <i class="fas fa-code text-3xl text-purple-500"></i>
+                                <a href="https://github.com/The-Key-Holders/ForgottenPythonScripts" target="_blank" class="text-white hover:text-purple-400">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 gradient-text">Python Automation Scripts</h3>
+                            <p class="text-gray-300 mb-4">
+                                Comprehensive collection of Python automation scripts for data processing, NLP applications, and workflow optimization.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">NLP</span>
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">ETL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <i class="fas fa-coins text-3xl text-purple-500"></i>
+                                <a href="legacy-vault.html" class="text-white hover:text-purple-400">
+                                    <i class="fas fa-external-link-alt text-xl"></i>
+                                </a>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 gradient-text">Legacy Vault</h3>
+                            <p class="text-gray-300 mb-4">
+                                Multi-chain estate planning app for Bitcoin, Monero, and Stacks. Rust API, Next.js frontend, beneficiaries, timelock policies. Self-hosted and privacy-focused.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Rust</span>
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Next.js</span>
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card">
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <i class="fas fa-chart-line text-3xl text-purple-500"></i>
+                                <div class="flex gap-2">
+                                    <a href="predictive-modeling-equations.html" class="text-white hover:text-purple-400" title="View project">
+                                        <i class="fas fa-external-link-alt text-xl"></i>
+                                    </a>
+                                    <a href="https://github.com/CupofJavad/Predictive_Modeling_Equations" target="_blank" rel="noopener" class="text-white hover:text-purple-400" title="GitHub">
+                                        <i class="fab fa-github text-xl"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3 gradient-text">Predictive Modeling Equations</h3>
+                            <p class="text-gray-300 mb-4">
+                                Transformer-based multi-modal prediction for financial, behavioral, and time-series data. BTC price predictor with CLI and web UI. PyTorch, attention mechanisms, regression & classification.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">PyTorch</span>
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">ML</span>
+                                <span class="bg-purple-600 bg-opacity-20 text-purple-400 px-3 py-1 rounded-full text-sm">Transformers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                Get In <span class="gradient-text">Touch</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-bold mb-6 gradient-text">Let's Connect</h3>
+                    <p class="text-lg mb-8 text-gray-300">
+                        I'm always open to discussing technical program management, AI automation, ERP implementations, or opportunities to collaborate.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-purple-500 text-xl mr-4"></i>
+                            <a href="mailto:javadkhoshnevisan@gmail.com" class="hover:text-purple-400 transition">javadkhoshnevisan@gmail.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-purple-500 text-xl mr-4"></i>
+                            <a href="tel:(916) 221-8278" class="hover:text-purple-400 transition">(916) 221-8278</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-purple-500 text-xl mr-4"></i>
+                            <span>Sacramento, CA</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-linkedin text-purple-500 text-xl mr-4"></i>
+                            <a href="https://www.linkedin.com/in/javadkhoshnevisan" target="_blank" class="hover:text-purple-400 transition">LinkedIn Profile</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fab fa-github text-purple-500 text-xl mr-4"></i>
+                            <a href="https://github.com/CupofJavad" target="_blank" class="hover:text-purple-400 transition">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <form class="contact-form" id="contactForm">
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" class="form-input w-full" id="name" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" class="form-input w-full" id="email" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea class="form-input w-full h-32" id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                © 2026 Javad Khoshnevisan. All rights reserved. | 
+                <span class="gradient-text">Technical Program Manager</span> | 
+                <span class="gradient-text">AI/ML Expert</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Typing effect
+        const titles = [
+            "Technical Program Manager",
+            "AI/ML Implementation Expert", 
+            "ERP Systems Specialist",
+            "BOM Management Professional",
+            "Solutions Engineer"
+        ];
+        
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeText() {
+            const currentTitle = titles[titleIndex];
+            const typedTextElement = document.getElementById('typed-text');
+            
+            if (!isDeleting) {
+                typedTextElement.textContent = currentTitle.substring(0, charIndex + 1);
+                charIndex++;
+                
+                if (charIndex === currentTitle.length) {
+                    isDeleting = true;
+                    setTimeout(typeText, 2000);
+                    return;
+                }
+            } else {
+                typedTextElement.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+                
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    titleIndex = (titleIndex + 1) % titles.length;
+                }
+            }
+            
+            setTimeout(typeText, isDeleting ? 50 : 100);
+        }
+        
+        typeText();
+
+        // Counter animation
+        function animateCounter(element, target) {
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                if (target > 1000) {
+                    element.textContent = '$' + (current / 1000000).toFixed(0) + 'M+';
+                } else {
+                    element.textContent = Math.floor(current) + '+';
+                }
+            }, 16);
+        }
+
+        // Intersection Observer for counters and skills
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('stats-counter')) {
+                        const target = parseInt(entry.target.getAttribute('data-target'));
+                        animateCounter(entry.target, target);
+                        observer.unobserve(entry.target);
+                    }
+                    
+                    if (entry.target.classList.contains('skill-progress')) {
+                        const width = entry.target.getAttribute('data-width');
+                        setTimeout(() => {
+                            entry.target.style.width = width;
+                        }, 200);
+                        observer.unobserve(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all counters and skill bars
+        document.querySelectorAll('.stats-counter').forEach(counter => {
+            observer.observe(counter);
+        });
+
+        document.querySelectorAll('.skill-progress').forEach(bar => {
+            observer.observe(bar);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+
+        // Contact form handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Create success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'fixed top-4 right-4 bg-green-600 text-white px-6 py-4 rounded-lg shadow-lg z-50';
+            successMessage.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle mr-3"></i>
+                    <span>Thank you for your message! I'll get back to you soon.</span>
+                </div>
+            `;
+            document.body.appendChild(successMessage);
+            
+            // Clear form
+            this.reset();
+            
+            // Remove message after 3 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 3000);
+        });
+
+        // Hide/show navigation on scroll
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                navMenu.classList.add('hidden');
+            } else {
+                navMenu.classList.remove('hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>

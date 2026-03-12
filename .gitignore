@@ -1,0 +1,33 @@
+# Supabase / Lunaverse-Supabase — only this directory is synced to GitHub.
+# Never commit secrets or parent-project files.
+
+# Environment and secrets (required: do not commit)
+.env
+.env.local
+.env.*.local
+supabase/.env
+supabase/.env.*
+.env.keys
+*.pem
+*.key
+
+# Supabase CLI
+.supabase/
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build / IDE
+dist/
+build/
+.vercel
+.idea
+.vscode/
+*.log
+.DS_Store
+
+# Optional: local DB dumps (may contain data)
+*.dump
+db_dump/
