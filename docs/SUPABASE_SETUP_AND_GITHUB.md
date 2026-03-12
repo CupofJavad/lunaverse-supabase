@@ -59,14 +59,20 @@ supabase db reset
 # Or, without reset: supabase db push (for linked remote)
 ```
 
-## 7. GitHub integration in Supabase
+## 7. Deploy from GitHub (choose one)
+
+### Option A — Free: GitHub Actions (no Pro required)
+
+Use the workflow in `.github/workflows/deploy-supabase.yml`. On push to `main` (when `supabase/**` changes), it runs `supabase db push` and `supabase functions deploy`. Add repo secrets: **SUPABASE_ACCESS_TOKEN**, **SUPABASE_PROJECT_REF**, **SUPABASE_DB_PASSWORD**. See [docs/GITHUB_ACTIONS_FREE_DEPLOY.md](GITHUB_ACTIONS_FREE_DEPLOY.md).
+
+### Option B — Supabase Pro: native GitHub integration
 
 1. In Dashboard: **Project Settings → Integrations → GitHub**.
 2. Enable the integration and authorize the GitHub org/repo.
 3. **Important:** Set “Relative path to Supabase directory” to **`supabase`** (because the repo root is this directory).
 4. Optionally enable **Automatic branching** (Git branch ↔ Supabase branch) and **Deploy to production** (push to main deploys migrations, Edge Functions, storage config).
 
-Ref: [GitHub integration](https://supabase.com/docs/guides/deployment/branching/github-integration).
+Ref: [GitHub integration](https://supabase.com/docs/guides/deployment/branching/github-integration). Requires a paid Pro plan.
 
 ## 8. Secrets for branches
 

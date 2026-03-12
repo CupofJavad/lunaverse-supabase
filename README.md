@@ -39,12 +39,11 @@ Supabase-compatible copy of **Server_Management_Lunaverse**. This directory is i
    # Or for local only: supabase db reset
    ```
 
-## GitHub ↔ Supabase sync
+## GitHub ↔ Supabase deploy (free, no Pro)
 
-- In Supabase Dashboard: **Integrations → GitHub** → connect the repo.
-- Set the **relative path to the Supabase directory** to `supabase` (repo root = this directory).
-- Enable **Automatic branching** and/or **Deploy to production** as needed.
-- **Secrets**: Do not commit `.env`. Use Dashboard secrets or `supabase secrets set --env-file ./supabase/.env` per branch. See [Managing config and secrets](https://supabase.com/docs/guides/local-development/managing-config).
+- **Free:** Use **GitHub Actions** (`.github/workflows/deploy-supabase.yml`). On push to `main` when `supabase/**` changes, it runs `supabase db push` and `supabase functions deploy`. Add repo secrets: **SUPABASE_ACCESS_TOKEN**, **SUPABASE_PROJECT_REF**, **SUPABASE_DB_PASSWORD**. See [docs/GITHUB_ACTIONS_FREE_DEPLOY.md](docs/GITHUB_ACTIONS_FREE_DEPLOY.md).
+- **Supabase Pro:** Alternatively use Dashboard **Integrations → GitHub** (set path to `supabase`, enable Deploy to production). See [docs/SUPABASE_SETUP_AND_GITHUB.md](docs/SUPABASE_SETUP_AND_GITHUB.md).
+- **Secrets:** Do not commit `.env`. Use GitHub Actions secrets or Dashboard/CLI for branch secrets.
 
 ## Supabase MCP (Cursor)
 
